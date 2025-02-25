@@ -27,11 +27,13 @@ with col1:
     st.metric("Total Revenue", f"${df['Total'].sum():,.2f}")
 with col2:  
     st.metric("Total Orders", len(df))
-
+    
+with col1:
 # Data Table
 st.subheader("Sales Data")
 st.dataframe(df)
 
+with col2:
 # Chart
 st.subheader("Sales by Category")
 category_sales = df.groupby('Category')['Total'].sum().reset_index()
